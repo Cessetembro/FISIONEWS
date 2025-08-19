@@ -3,17 +3,17 @@ name: Atualizar Notícias
 on:
   schedule:
     - cron: "0 */2 * * *"   # roda a cada 2 horas
-  workflow_dispatch:         # permite rodar manualmente
+  workflow_dispatch: {}      # permite rodar manualmente
 
 jobs:
   atualizar-feed:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
@@ -21,12 +21,12 @@ jobs:
         run: pip install feedparser
 
       - name: Atualizar feed.json
-        run: python update_feed.py
+        run: python .github/workflows/update_feed.py
 
       - name: Commit & push
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add feed.json
           git commit -m "auto: atualizar feed" || echo "sem mudanças"
           git push
