@@ -1,11 +1,11 @@
 import json, feedparser, datetime
-# Fontes de notícias generalistas - URLs confiáveis e amplamente acessíveis
+# Fontes acadêmicas e de pesquisa - URLs abertas e confiáveis
 sources = {
-    "G1 Globo": "https://g1.globo.com/rss/g1/",
-    "BBC News World": "https://feeds.bbci.co.uk/news/world/rss.xml",
-    "Reuters World News": "https://www.reutersagency.com/feed/?best-topics=business-finance&post_type=best",
-    "Globo.com": "https://g1.globo.com/dynamo/rss2.xml",
-    "BBC News Brasil": "https://feeds.bbci.co.uk/portuguese/rss.xml"
+    "arXiv Computer Science": "https://export.arxiv.org/rss/cs",
+    "MIT News - Health & Medicine": "http://news.mit.edu/rss/topic/health-medicine",
+    "NASA Breaking News": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+    "Phys.org": "https://phys.org/rss-feed/",
+    "Python Software Foundation": "https://pyfound.blogspot.com/feeds/posts/default?alt=rss"
 }
 MAX_ITEMS = 30
 feed_items = []
