@@ -1,10 +1,11 @@
 import json, feedparser, datetime
 
-# Fontes de notícias/artigos
+# Fontes de notícias/artigos - URLs testadas e funcionais
 sources = {
-    "PubMed": "https://pubmed.ncbi.nlm.nih.gov/rss/search/1kY91pu7vBZiKMcK2hTq42zbmX9/?limit=10",
+    "PubMed Central": "https://www.ncbi.nlm.nih.gov/pmc/rss/current/PMC.xml",
     "COFFITO": "https://www.coffito.gov.br/nsite/feed/",
-    "Medscape": "https://www.medscape.com/rss/siteindex/0"
+    "MedlinePlus Health News": "https://medlineplus.gov/feeds/healthdayfeeds.xml",
+    "ScienceDaily Medicine": "https://www.sciencedaily.com/rss/health_medicine.xml"
 }
 
 MAX_ITEMS = 30
